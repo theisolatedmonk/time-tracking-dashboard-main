@@ -26,7 +26,50 @@ export default function Fullpage () {
           <p className=''>Monthly</p>
         </div>
       </div>
-      <Card />
+      <div className='flex flex-col  h-[50%]  flex-wrap gap-x-4  w-full'>
+        <Card
+          backgoundcolor={'bg-[hsl(15,100%,70%)]'}
+          childbackgrondcolor={'bg-[hsl(235,45%,61%)]'}
+          Activity={'rc'}
+          time={'4hrs'}
+          lastTime={'5hrs'}
+        />
+        <Card
+          backgoundcolor={'bg-[hsl(15,100%,70%)]'}
+          childbackgrondcolor={'bg-[hsl(235,45%,61%)]'}
+          Activity={'rc'}
+          time={'4hrs'}
+          lastTime={'5hrs'}
+        />
+        <Card
+          backgoundcolor={'bg-[hsl(15,100%,70%)]'}
+          childbackgrondcolor={'bg-[hsl(235,45%,61%)]'}
+          Activity={'rc'}
+          time={'4hrs'}
+          lastTime={'5hrs'}
+        />
+        <Card
+          backgoundcolor={'bg-[hsl(15,100%,70%)]'}
+          childbackgrondcolor={'bg-[hsl(235,45%,61%)]'}
+          Activity={'rc'}
+          time={'4hrs'}
+          lastTime={'5hrs'}
+        />
+        <Card
+          backgoundcolor={'bg-[hsl(15,100%,70%)]'}
+          childbackgrondcolor={'bg-[hsl(235,45%,61%)]'}
+          Activity={'rc'}
+          time={'4hrs'}
+          lastTime={'5hrs'}
+        />
+        <Card
+          backgoundcolor={'bg-[hsl(15,100%,70%)]'}
+          childbackgrondcolor={'bg-[hsl(235,45%,61%)]'}
+          Activity={'rc'}
+          time={'4hrs'}
+          lastTime={'5hrs'}
+        />
+      </div>
     </div>
   )
 }
