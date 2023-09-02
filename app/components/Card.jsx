@@ -12,10 +12,10 @@ import Image from 'next/image'
 export default function Card (props) {
   return (
     <div
-      className={`w-full rounded-lg sm:w-40 h-full flex flex-col items-end justify-end   ${props.backgoundcolor}`}
+      className={`w-full rounded-lg sm:w-[30%] h-full  flex flex-col items-end justify-end   ${props.backgoundcolor}`}
     >
       <div
-        className={`w-full h-[80%] flex flex-col p-2 rounded-lg   ${props.childbackgrondcolor}`}
+        className={`w-full h-[80%]  flex flex-col p-2 rounded-lg   ${props.childbackgrondcolor}`}
       >
         <div className='flex justify-between items-center'>
           <p>{props.Activity}</p>
@@ -29,4 +29,49 @@ export default function Card (props) {
       </div>
     </div>
   )
+}
+
+{
+  /* <Card
+backgoundcolor={'bg-[hsl(15,100%,70%)]'}
+childbackgrondcolor={'bg-[hsl(235,45%,61%)]'}
+Activity={'rc'}
+time={'4hrs'}
+lastTime={'5hrs'}
+/>
+<Card
+backgoundcolor={'bg-[hsl(15,100%,70%)]'}
+childbackgrondcolor={'bg-[hsl(235,45%,61%)]'}
+Activity={'rc'}
+time={'4hrs'}
+lastTime={'5hrs'}
+/>
+<Card
+backgoundcolor={'bg-[hsl(15,100%,70%)]'}
+childbackgrondcolor={'bg-[hsl(235,45%,61%)]'}
+Activity={'rc'}
+time={'4hrs'}
+lastTime={'5hrs'}
+/>
+<Card
+backgoundcolor={'bg-[hsl(15,100%,70%)]'}
+childbackgrondcolor={'bg-[hsl(235,45%,61%)]'}
+Activity={'rc'}
+time={'4hrs'}
+lastTime={'5hrs'}
+/>
+<Card
+backgoundcolor={'bg-[hsl(15,100%,70%)]'}
+childbackgrondcolor={'bg-[hsl(235,45%,61%)]'}
+Activity={'rc'}
+time={'4hrs'}
+lastTime={'5hrs'}
+/>
+<Card
+backgoundcolor={'bg-[hsl(15,100%,70%)]'}
+childbackgrondcolor={'bg-[hsl(235,45%,61%)]'}
+Activity={'rc'}
+time={'4hrs'}
+lastTime={'5hrs'}
+/> */
 }
