@@ -27,42 +27,71 @@ const iconsWithTitle = [
 import Image from 'next/image'
 import { twMerge } from 'tailwind-merge'
 import { clsx } from 'clsx'
+import { data } from '@/app/components/data'
+
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 export function cn (...inputs) {
   return twMerge(clsx(...inputs))
 }
 
-export default function Card (props) {
+export default function Card ({ timeframe }) {
+  const [animationParent] = useAutoAnimate()
   return (
+    //  { data.map((d,index)=>()}
     <>
-      {iconsWithTitle.map(item => (
-        <div
-          className={cn(
-            '  relative rounded-lg  sm:h-full pt-6 flex flex-col items-end justify-end  overflow-hidden   h-16',
-            item.backgroundColor
-          )}
-        >
-          <Image
-            src={item.src}
-            height={70}
-            className='absolute -top-1 overflow-hidden z-30 right-2'
-          />
-
+      {iconsWithTitle.map((item, index) => {
+        const data2 = data[index]
+        return (
           <div
-            className={`w-full h-[90%]  flex flex-col p-4 rounded-lg z-40  bg-darkBlue `}
+            className={cn(
+              '  relative rounded-lg  sm:h-full pt-6 flex flex-col items-end justify-end  overflow-hidden   h-52',
+              item.backgroundColor
+            )}
           >
-            <div className='flex justify-between items-center p-2'>
-              <p>{item.activityType}</p>
+            {' '}
+            <Image
+              src={item.src}
+              height={70}
+              className='absolute -top-1 overflow-hidden z-30 right-2'
+            />
+            <div
+              className={`w-full h-[90%]  flex flex-col p-4 rounded-lg z-40  bg-darkBlue  `}
+            >
+              <div className='flex justify-between items-center p-2'>
+                <p>{item.activityType}</p>
 
-              <Image src={ellipsis} height={15} width={15} className='' />
-            </div>
-            <div className='flex sm:flex-col sm:items-start justify-between items-center gap-2 p-2'>
-              <div className='text-3xl'>present</div>
-              <div className='text-xs'>Last</div>
+                <Image src={ellipsis} height={15} width={15} className='' />
+              </div>
+              <div className='flex sm:flex-col sm:items-start justify-between items-center gap-2 p-2'>
+                <div ref={animationParent} className='text-3xl transition-all'>
+                  {timeframe == 'daily' && data2.timeframes.daily.current}
+                  {timeframe == 'weekly' && data2.timeframes.weekly.current}
+                  {timeframe == 'monthly' && data2.timeframes.monthly.current}
+                </div>
+                <div className='text-xs flex gap-2'>
+                  <p> Last</p>
+                  {timeframe == 'daily' && (
+                    <div>Daily - {data2.timeframes.daily.previous}hrs</div>
+                  )}
+                  {timeframe == 'weekly' && (
+                    <div>
+                      Weekly - {data2.timeframes.weekly.previous}
+                      hrs
+                    </div>
+                  )}
+                  {timeframe == 'monthly' && (
+                    <div>
+                      Monthly - {data2.timeframes.monthly.previous}
+                      hrs
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        )
+      })}
     </>
   )
 }
