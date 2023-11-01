@@ -45,7 +45,7 @@ export default function Card ({ timeframe }) {
         return (
           <div
             className={cn(
-              '  relative rounded-lg  sm:h-full pt-6 flex flex-col items-end justify-end  overflow-hidden   h-52',
+              '  relative rounded-lg  sm:h-full pt-5 flex flex-col items-end justify-end  overflow-hidden z-40  h-44 ',
               item.backgroundColor
             )}
           >
@@ -56,7 +56,7 @@ export default function Card ({ timeframe }) {
               className='absolute -top-1 overflow-hidden z-30 right-2'
             />
             <div
-              className={`w-full h-[90%]  flex flex-col p-4 rounded-lg z-40  bg-darkBlue  `}
+              className={`w-full h-[90%]  flex flex-col p-4 rounded-lg z-50  bg-darkBlue `}
             >
               <div className='flex justify-between items-center p-2'>
                 <p>{item.activityType}</p>
